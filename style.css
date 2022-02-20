@@ -915,12 +915,12 @@ section {
 
   .nav__list.flex {
     position: fixed;
-    top: -50%;
+    top: -40%;
     left: 0;
     transform: translateY(-2000px);
     z-index: 1000;
     flex-direction: column;
-    min-height: 1000px;
+    height: 100vh;
     background-color: #efe5df;
     justify-content: center;
     gap: 70px;
