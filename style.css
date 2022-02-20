@@ -700,6 +700,7 @@ section {
 
 .work-image-holder {
   position: absolute;
+  -webkit-overflow: hidden;
   overflow: hidden;
   pointer-events: none;
   top: 50%;
@@ -731,7 +732,6 @@ section {
   transform: scale(1.2);
   transform-origin: center center;
   transition: all 1.2s cubic-bezier(0, 0.55, 0.45, 1);
-  aspect-ratio: auto 1820 / 843;
 }
 
 .coming-soon h4 {
@@ -750,7 +750,6 @@ section {
 .work-row:hover .work-image-holder {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  overflow: hidden;
 }
 
 .work-row:hover .work-image-holder::before {
