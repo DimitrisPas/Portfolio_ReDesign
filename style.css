@@ -758,6 +758,7 @@ section {
 
 .work-row:hover .work-image-holder img {
   transform: scale(1);
+  width: 100%;
 }
 
 /* PROJECTS SECTION END  */
