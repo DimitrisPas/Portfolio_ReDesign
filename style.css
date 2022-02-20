@@ -612,7 +612,7 @@ section {
 /* HERO SECTION */
 
 .hero__title {
-  font-size: 35px;
+  font-size: 33px;
   font-weight: 400;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
   opacity: 0;
@@ -620,7 +620,7 @@ section {
 }
 
 .hero__title span {
-  font-size: 12vw;
+  font-size: 11vw;
   font-weight: 400;
 }
 
