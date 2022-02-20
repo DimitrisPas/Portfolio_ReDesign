@@ -61,12 +61,6 @@ h2 {
   font-family: "Montserrat", sans-serif;
 }
 
-h1,
-h2,
-h3 {
-  margin: 0 0 35px;
-}
-
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
@@ -546,13 +540,13 @@ section {
   left: 50%;
   z-index: 10;
   transform: translateX(-50%);
-  width: 70%;
+  width: 100%;
   border-bottom: 1px solid var(--main-black);
   transition: all 500ms ease-in-out;
 }
 
 .header.flex {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .nav__links .nav__link {
@@ -887,7 +881,7 @@ section {
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1030px) {
   .w-50 {
     width: 100%;
   }
@@ -900,6 +894,10 @@ section {
   .card.flex {
     width: 75%;
     margin: 70px auto;
+  }
+
+  .header.flex {
+    justify-content: space-between;
   }
 }
 
@@ -954,10 +952,6 @@ section {
 @media only screen and (max-width: 701px) {
   section {
     padding: 100px 0 10px;
-  }
-
-  .header {
-    width: 100%;
   }
 
   .about.flex,
