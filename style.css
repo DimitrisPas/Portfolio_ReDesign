@@ -691,26 +691,6 @@ section {
   z-index: 0;
 }
 
-.work-row:hover {
-  z-index: 999;
-}
-
-.work-row:hover .work-link {
-  letter-spacing: 2px;
-}
-
-.work-row:hover .work-image-holder {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-.work-row:hover .work-image-holder::before {
-  opacity: 0.1;
-}
-
-.work-row:hover .work-image-holder img {
-  transform: scale(1);
-}
-
 .work-link {
   position: relative;
   z-index: 1;
@@ -756,6 +736,26 @@ section {
 .coming-soon h4 {
   margin: 0 !important;
   opacity: 0.6;
+}
+
+.work-row:hover {
+  z-index: 999;
+}
+
+.work-row:hover .work-link {
+  letter-spacing: 2px;
+}
+
+.work-row:hover .work-image-holder {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.work-row:hover .work-image-holder::before {
+  opacity: 0.1;
+}
+
+.work-row:hover .work-image-holder img {
+  transform: scale(1);
 }
 
 /* PROJECTS SECTION END  */
