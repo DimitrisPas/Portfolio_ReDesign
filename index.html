@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Montserrat:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <title>DP.</title>
+  </head>
+  <body>
+    <div id="home"></div>
+    <div class="cursor test"></div>
+    <div class="container">
+      <header class="header flex" id="header">
+        <div class="logo">
+          <h1>DP.</h1>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list flex">
+            <li class="nav__links">
+              <a href="#home" class="nav__link">Home</a>
+            </li>
+            <li class="nav__links">
+              <a href="#projects" class="nav__link">Projects</a>
+            </li>
+            <li class="nav__links">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__links">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+            <a class="close">CLOSE</a>
+          </ul>
+          <div class="burger-container">
+            <div id="burger">
+              <div class="bar topBar" id="topbar"></div>
+              <div class="bar btmBar"></div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="intro">
+          <div class="name">
+            <h1 class="hero__title">
+              Hello, I'm
+              <span class="d-block first-name">
+                Dimitris
+                <span class="last-name">Pasvantis,</span>
+              </span>
+            </h1>
+          </div>
+          <div class="short-desc">
+            <p class="w-50">
+              Junior Front-End developer with great passion for UI / UX design.
+            </p>
+          </div>
+        </div>
+        <a href="#projects">
+          <svg
+            class="arrow"
+            width="34"
+            height="39"
+            viewBox="0 0 34 39"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="margin-top: 116.18px; cursor: pointer"
+          >
+            <path
+              d="M19.2187 0.181824H14.4176V29.2102L3.31959 18.1122L0.0326538 21.4361L16.8182 38.2216L33.6406 21.4361L30.2798 18.1122L19.2187 29.2102V0.181824Z"
+              fill="#181717"
+            />
+          </svg>
+        </a>
+      </section>
+
+      <section class="projects" id="projects">
+        <div class="projects__container">
+          <div class="projects__intro">
+            <div class="gutter">
+              <h2>FEATURED WORKS.</h2>
+            </div>
+          </div>
+          <div class="work-holder">
+            <div class="gutter">
+              <div class="work-row">
+                <a
+                  href="https://headphonesb.000webhostapp.com/"
+                  class="work-link"
+                  target="_blank"
+                >
+                  Beats
+                </a>
+                <div class="work-image-holder">
+                  <img src="./images/beats.jpg" alt="" loading="lazy" />
+                </div>
+              </div>
+              <div class="work-row">
+                <a
+                  href="https://the-tasty-restaurant.netlify.app/"
+                  class="work-link"
+                  target="_blank"
+                >
+                  Tasty
+                </a>
+                <div class="work-image-holder">
+                  <img src="./images/tasty.jpg" alt="" loading="lazy" />
+                </div>
+              </div>
+              <div class="work-row">
+                <a
+                  href="https://sneaker-head.netlify.app/"
+                  class="work-link"
+                  target="_blank"
+                >
+                  SneakerHead
+                </a>
+                <div class="work-image-holder">
+                  <img src="./images/sneaker.jpg" alt="" loading="lazy" />
+                </div>
+              </div>
+              <div class="work-row">
+                <a
+                  href="https://laptoph.000webhostapp.com/"
+                  class="work-link"
+                  target="_blank"
+                >
+                  MateBook
+                </a>
+                <div class="work-image-holder">
+                  <img src="./images/matebook.jpg" alt="" loading="lazy" />
+                </div>
+              </div>
+              <div class="work-row">
+                <a
+                  href="https://tictactoegr.000webhostapp.com/"
+                  class="work-link"
+                  target="_blank"
+                >
+                  Tic Tac Toe
+                </a>
+                <div class="work-image-holder">
+                  <img src="./images/tic.jpg" alt="" loading="lazy" />
+                </div>
+              </div>
+              <div class="work-row coming-soon">
+                <h4>Much more coming soon...</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about flex" id="about">
+        <div class="about__intro w-50">
+          <h1 class="about__title">Some things About me.</h1>
+          <h2 class="about__desc">
+            Hi, I’m Dimitris, But you can call me Jimmy. Nice to meet you. I'm a
+            Front-End Developer who's been studying Web Development for the past
+            1 year. I'm quietly confident, naturally curious, and perpetually
+            working on improving my chops one design problem at a time.
+          </h2>
+        </div>
+        <div class="about__img w-50">
+          <img src="./images/me.png" alt="" />
+        </div>
+      </section>
+      <div class="seperator"></div>
+
+      <section class="contact flex" id="contact">
+        <div class="contact__info">
+          <h3>
+            Im thrilled to hear from you.
+            <span>
+              <svg
+                class="arrow"
+                width="34"
+                height="39"
+                viewBox="0 0 34 39"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.2187 0.181824H14.4176V29.2102L3.31959 18.1122L0.0326538 21.4361L16.8182 38.2216L33.6406 21.4361L30.2798 18.1122L19.2187 29.2102V0.181824Z"
+                  fill="#181717"
+                />
+              </svg>
+            </span>
+          </h3>
+        </div>
+        <div class="email">
+          <a href="mailto:j.pasvantis@gmail.com">j.pasvantis@gmail.com</a>
+        </div>
+      </section>
+      <footer class="footer flex">
+        <div class="copyright w-50">
+          <h4>Dimitris Pasvantis — 2022</h4>
+        </div>
+        <div class="social w-50 text-right">
+          <a
+            href="https://www.linkedin.com/in/dimitris-pasvantis-6b0228174/"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+          <a href="https://github.com/DimitrisPas" target="_blank">Github</a>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/CSSRulePlugin.min.js"
+      integrity="sha512-Aa3UvVB5yhH/dNXMt8nGZDD15Xmntq1ODcavfgT8omSLaomrJKYybWczzc6UJYDUAdqR1hmDJ47V4Ux50PPIuw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+  <script src="main.js"></script>
+</html>
