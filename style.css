@@ -1029,7 +1029,7 @@ section {
     line-height: 1.4;
   }
 
-  .contact__info {
-    font-size: 22px;
+  .contact__info h3 {
+    font-size: 26px;
   }
 }
