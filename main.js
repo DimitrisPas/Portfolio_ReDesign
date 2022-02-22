@@ -56,7 +56,7 @@ document.addEventListener("visibilitychange", () => {
   if (document.visibilityState == "visible") {
     document.title = "DP.";
   } else {
-    document.title = "I miss you, Please come back 😔";
+    document.title = "Please come back 😔";
   }
 });
 
