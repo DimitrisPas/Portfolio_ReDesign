@@ -667,6 +667,7 @@ section {
   font-weight: 300;
   line-height: 1;
   margin-bottom: 50px;
+  transform: translateX(-1000px);
 }
 
 .work-holder {
@@ -676,13 +677,24 @@ section {
 }
 
 .work-row {
+  position: relative;
   padding: 15px 0;
-  border-bottom: 1px solid var(--main-black);
   font-size: clamp(15px, 5vw + 1rem, 60px);
   line-height: 1;
   color: var(--main-black);
   position: relative;
   z-index: 0;
+  transform: translateX(-3000px);
+}
+
+.work-row::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  background-color: var(--main-black);
+  height: 1px;
+  bottom: 0;
+  left: 0;
 }
 
 .work-link {

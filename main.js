@@ -75,16 +75,32 @@ window.onscroll = () => {
 
 // GSAP ANIMATIONS
 let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: "1"}});
-const hero__title = document.querySelector(".hero__title");
-const project__info = document.querySelectorAll(".project__info");
-const project__image = document.querySelectorAll(".project__image");
 
-tl.to(".header", {top: "0", duration: 1.3}).to(
-  ".hero__title, .short-desc",
-  {
-    "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-    opacity: "1",
-    y: 0,
-  },
-  "+=.5"
-);
+let lines = CSSRulePlugin.getRule(".work-row:after");
+
+tl.to(".header", {top: "0", duration: 1.3})
+  .to(
+    ".hero__title, .short-desc",
+    {
+      "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
+      opacity: "1",
+      y: 0,
+    },
+    "+=.5"
+  )
+  .to(".projects__intro h2", {
+    scrollTrigger: ".projects__intro h2",
+    x: 0,
+    duration: 1.2,
+  })
+  .to(".work-row", {
+    scrollTringer: ".projects__container",
+    x: 0,
+    duration: 1.1,
+    stagger: 0.8,
+    ease: "circ.out",
+  })
+  .to(lines, {
+    duration: 1,
+    width: "100%",
+  });
