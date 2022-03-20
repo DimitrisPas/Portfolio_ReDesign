@@ -89,18 +89,7 @@ tl.to(".header", {top: "0", duration: 1.3})
     "+=.5"
   )
   .to(".projects__intro h2", {
-    scrollTrigger: ".projects__intro h2",
+    scrollTrigger: ".work-holder",
     x: 0,
-    duration: 1.2,
-  })
-  .to(".work-row", {
-    scrollTringer: ".projects__container",
-    x: 0,
-    duration: 1.1,
-    stagger: 0.8,
-    ease: "circ.out",
-  })
-  .to(lines, {
-    duration: 1,
-    width: "100%",
+    duration: 3,
   });
