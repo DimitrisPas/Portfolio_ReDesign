@@ -91,5 +91,5 @@ tl.to(".header", {top: "0", duration: 1.3})
   .to(".projects__intro h2", {
     scrollTrigger: ".work-holder",
     x: 0,
-    duration: 3,
+    duration: 1,
   });
