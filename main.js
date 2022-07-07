@@ -1,95 +1,127 @@
-const cursor = document.querySelector(".test");
+(function ($) {
+  function anim_intro() {
+    var tl = gsap.timeline();
 
-const anchor = document.getElementsByTagName("a");
-
-const burger = document.querySelector(".burger-container");
-
-const close = document.querySelector(".close");
-
-const nav = document.querySelector(".nav__list");
-
-const navLink = document.querySelectorAll(".nav__link");
-
-navLink.forEach((n) => {
-  n.addEventListener("click", () => {
-    nav.classList.remove("menu-opened");
-    document.documentElement.style.overflow = "visible";
-  });
-});
-
-burger.addEventListener("click", () => {
-  nav.classList.add("menu-opened");
-  document.documentElement.style.overflow = "hidden";
-});
-
-close.addEventListener("click", () => {
-  nav.classList.remove("menu-opened");
-  document.documentElement.style.overflow = "visible";
-});
-
-// CUSTOM CURSOR
-
-document.addEventListener("mousemove", (e) => {
-  cursor.setAttribute(
-    "style",
-    "top: " + (e.pageY - 2) + "px; left: " + (e.pageX - 2) + "px;"
-  );
-});
-
-for (let i = 0; i < anchor.length; i++) {
-  anchor[i].addEventListener("mouseover", () => {
-    cursor.classList.remove("cursor");
-    cursor.classList.add("cursor2");
-  });
-}
-
-for (let i = 0; i < anchor.length; i++) {
-  anchor[i].addEventListener("mouseout", () => {
-    cursor.classList.remove("cursor2");
-    cursor.classList.add("cursor");
-  });
-}
-
-// CUSTOM TITLE WHEN TABBED OUT
-
-document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState == "visible") {
-    document.title = "DP.";
-  } else {
-    document.title = "Please come back 😔";
+    tl.to("header", {
+      duration: 0.5,
+      y: "0",
+      ease: " Power3.in",
+    })
+      .to(
+        ".first-line span",
+        {
+          duration: 0.8,
+          y: "0",
+          ease: "Power3.in",
+        },
+        "-=0.2"
+      )
+      .to(
+        ".sec-line > div",
+        {
+          duration: 1,
+          y: "0",
+          opacity: 1,
+          stagger: 0.4,
+          ease: "Power3.in",
+        },
+        "-=0.5"
+      )
+      .to(".projects__intro,.work-row", {
+        ScrollTrigger: {
+          trigger: ".work-holder",
+        },
+        duration: 1,
+        y: 0,
+        opacity: 1,
+        ease: "Power3.in",
+        stagger: 0.4,
+      });
   }
-});
 
-// CHANGE THINGS ON SCROLL
+  $(document).ready(function () {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-window.onscroll = () => {
-  const header = document.getElementById("header");
-  if (this.scrollY >= 250) {
-    document.body.style.background = "#efe5df";
-    header.style.background = "#efe5df";
-  } else {
-    document.body.style.background = "#e9e6e3";
-    header.style.background = "#e9e6e3";
-  }
-};
+    anim_intro();
 
-// GSAP ANIMATIONS
-let tl = gsap.timeline({defaults: {ease: "power4.inOut", duration: "1"}});
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      if (scroll >= 50) {
+        $("header").addClass("scrolled");
+        $("body").addClass("change-bg");
+      } else {
+        $("header").removeClass("scrolled");
+        $("body").removeClass("change-bg");
+      }
+    });
 
-let lines = CSSRulePlugin.getRule(".work-row:after");
+    var cursor = $(".cursor"),
+      follower = $(".cursor-follower");
 
-tl.to(".header", {top: "0", duration: 1.3})
-  .to(
-    ".hero__title, .short-desc",
-    {
-      "clip-path": "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-      opacity: "1",
-      y: 0,
-    },
-    "+=.5"
-  )
-  .to(".projects__intro h2", {
-    scrollTrigger: ".work-holder",
-    x: 0,
-    duration: 1,
+    var posX = 0,
+      posY = 0;
+
+    var mouseX = 0,
+      mouseY = 0;
+
+    TweenMax.to({}, 0.016, {
+      repeat: -1,
+      onRepeat: function () {
+        posX += (mouseX - posX) / 9;
+        posY += (mouseY - posY) / 9;
+
+        TweenMax.set(follower, {
+          css: {
+            left: posX - 10,
+            top: posY - 10,
+          },
+        });
+
+        TweenMax.set(cursor, {
+          css: {
+            left: mouseX,
+            top: mouseY,
+          },
+        });
+      },
+    });
+
+    $(document).on("mousemove", function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    $("a, .clickable, .button, input, textarea").on("mouseenter", function () {
+      cursor.addClass("active");
+      follower.addClass("active");
+    });
+    $("a, .clickable, .button, input, textarea").on("mouseleave", function () {
+      cursor.removeClass("active");
+      follower.removeClass("active");
+    });
+
+    var title = $("title").text();
+    var new_title = `Please come back, I miss you😔`;
+
+    window.addEventListener("focus", resetTitleicon);
+
+    window.addEventListener("blur", changeTitleicon);
+
+    function changeTitleicon() {
+      $("title").text(new_title);
+    }
+
+    function resetTitleicon() {
+      $("title").text(title);
+    }
   });
+
+  const smoother = ScrollSmoother.create({
+    //
+
+    smooth: 2,
+    effects: true,
+    preventDefault: true,
+    ignoreMobileResize: true,
+  });
+})(jQuery);
