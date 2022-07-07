@@ -116,12 +116,7 @@
     }
   });
 
-  const smoother = ScrollSmoother.create({
-    //
-
-    smooth: 2,
-    effects: true,
-    preventDefault: true,
-    ignoreMobileResize: true,
+  $("#home").on("click", function () {
+    $("body").scrollTop(0);
   });
 })(jQuery);
