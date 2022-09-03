@@ -40,7 +40,7 @@
   }
 
   $(document).ready(function () {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+    gsap.registerPlugin(ScrollTrigger);
 
     anim_intro();
 
@@ -101,7 +101,7 @@
     });
 
     var title = $("title").text();
-    var new_title = `Please come back, I miss you😔`;
+    var new_title = `Please come back, I miss you😔”`;
 
     window.addEventListener("focus", resetTitleicon);
 
