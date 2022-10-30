@@ -27,22 +27,14 @@
         },
         "-=0.5"
       )
-      .to(".projects__intro,.work-row", {
-        ScrollTrigger: {
-          trigger: ".work-holder",
-        },
-        duration: 1,
-        y: 0,
-        opacity: 1,
-        ease: "Power3.in",
-        stagger: 0.4,
-      });
   }
 
   $(document).ready(function () {
     gsap.registerPlugin(ScrollTrigger);
 
     anim_intro();
+
+
 
     $(window).scroll(function () {
       var scroll = $(window).scrollTop();
